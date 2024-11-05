@@ -13,6 +13,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@atproto/api": "^0.13.14",
     "@atproto/oauth-client-node": "^0.2.0",
     "@tanstack/react-router": "^1.78.3",
     "@tanstack/start": "^1.78.3",

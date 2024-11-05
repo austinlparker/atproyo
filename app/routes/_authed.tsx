@@ -3,6 +3,7 @@ import { createServerFn } from "@tanstack/start";
 import { getWebRequest } from "vinxi/http";
 import { getServerContext } from "../server";
 import { useAppSession } from "../lib/session";
+import { Agent } from "@atproto/api";
 
 export const loginFn = createServerFn(
   "POST",
@@ -25,7 +26,6 @@ export const oauthCallbackFn = createServerFn("GET", async () => {
   const params = new URLSearchParams(request.url.split("?")[1] || "");
   try {
     const { session } = await oauthClient.callback(params);
-
     const cookieSession = await useAppSession();
     await cookieSession.update({
       did: session.did,
